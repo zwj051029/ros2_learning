@@ -18,6 +18,7 @@ from std_msgs.msg import String
 class StrPublisher(Node):
     def __init__(self):
         super().__init__("str_publisher_py")
+        self.get_logger().info("发布方创建成功!(Python)")
         self.count_ = 0
         self.publisher_ = self.create_publisher(String, "string", 10)
         self.timer_ = self.create_timer(1.0, self.timer_callback)

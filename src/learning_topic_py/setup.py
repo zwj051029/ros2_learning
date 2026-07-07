@@ -25,6 +25,7 @@ setup(
     entry_points={
         'console_scripts': [
             'py_string_pub = learning_topic_py.py_string_pub:main',
+            'py_string_sub = learning_topic_py.py_string_sub:main',
         ],
     },
 )
