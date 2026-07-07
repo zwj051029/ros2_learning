@@ -19,6 +19,7 @@ using namespace std::chrono_literals;
 class StrPublisher : public rclcpp::Node {
 public:
     StrPublisher() : Node("str_publisher_cpp"), count_(1) {
+        RCLCPP_INFO(this->get_logger(), "发布方创建成功!");
         publisher_ = this->create_publisher<std_msgs::msg::String>("string", 10);
         timer_ = this->create_wall_timer(1s, std::bind(&StrPublisher::StrCallback, this));
     }

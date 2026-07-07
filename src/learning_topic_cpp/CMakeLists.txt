@@ -16,14 +16,26 @@ add_executable(
     src/cpp_string_pub.cpp
 )
 
+add_executable(
+    cpp_string_sub
+    src/cpp_string_sub.cpp
+)
+
 ament_target_dependencies(
     cpp_string_pub
     "rclcpp"
     "std_msgs"
 )
 
+ament_target_dependencies(
+    cpp_string_sub
+    "rclcpp"
+    "std_msgs"
+)
+
 install(TARGETS
     cpp_string_pub
+    cpp_string_sub
     DESTINATION lib/${PROJECT_NAME}
 )
 

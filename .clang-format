@@ -8,7 +8,7 @@ BreakBeforeBraces: Attach
 AllowShortFunctionsOnASingleLine: Empty
 AllowShortIfStatementsOnASingleLine: Never
 AllowShortLoopsOnASingleLine: false
-ColumnLimit: 100
+ColumnLimit: 666
 PointerAlignment: Right
 DerivePointerAlignment: false
 SpaceBeforeParens: ControlStatements
