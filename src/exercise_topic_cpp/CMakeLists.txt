@@ -9,31 +9,55 @@ endif()
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(std_msgs REQUIRED)
+find_package(base_interfaces REQUIRED)
 
 add_executable(
     battery_pub
     src/battery_pub.cpp
+)
+ament_target_dependencies(
+    battery_pub
+    "rclcpp"
+    "std_msgs"
 )
 
 add_executable(
     battery_sub
     src/battery_sub.cpp
 )
-
-ament_target_dependencies(
-    battery_pub
-    "rclcpp"
-    "std_msgs"
-)
 ament_target_dependencies(
     battery_sub
     "rclcpp"
     "std_msgs"
+)
+
+add_executable(
+    sensor_status_pub
+    src/sensor_status_pub.cpp
+)
+ament_target_dependencies(
+    sensor_status_pub
+    "rclcpp"
+    "std_msgs"
+    "base_interfaces"
+)
+
+add_executable(
+    sensor_status_sub
+    src/sensor_status_sub.cpp
+)
+ament_target_dependencies(
+    sensor_status_sub
+    "rclcpp"
+    "std_msgs"
+    "base_interfaces"
 )
 
 install(TARGETS 
     battery_pub
     battery_sub
+    sensor_status_pub
+    sensor_status_sub
     DESTINATION lib/${PROJECT_NAME}
 )
 
