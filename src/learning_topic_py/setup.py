@@ -26,6 +26,8 @@ setup(
         'console_scripts': [
             'py_string_pub = learning_topic_py.py_string_pub:main',
             'py_string_sub = learning_topic_py.py_string_sub:main',
+            'student_pub = learning_topic_py.student_pub:main',
+            'student_sub = learning_topic_py.student_sub:main',
         ],
     },
 )
