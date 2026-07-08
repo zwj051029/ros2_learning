@@ -9,33 +9,55 @@ endif()
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(std_msgs REQUIRED)
-find_package(base_interfaces_demo REQUIRED)
+find_package(base_interfaces REQUIRED)
 
 add_executable(
     cpp_string_pub
     src/cpp_string_pub.cpp
+)
+ament_target_dependencies(
+    cpp_string_pub
+    "rclcpp"
+    "std_msgs"
 )
 
 add_executable(
     cpp_string_sub
     src/cpp_string_sub.cpp
 )
-
-ament_target_dependencies(
-    cpp_string_pub
-    "rclcpp"
-    "std_msgs"
-)
-
 ament_target_dependencies(
     cpp_string_sub
     "rclcpp"
     "std_msgs"
+)
+
+add_executable(
+    student_pub
+    src/student_pub.cpp
+)
+ament_target_dependencies(
+    student_pub
+    "rclcpp"
+    "std_msgs"
+    "base_interfaces"
+)
+
+add_executable(
+    student_sub
+    src/student_sub.cpp
+)
+ament_target_dependencies(
+    student_sub
+    "rclcpp"
+    "std_msgs"
+    "base_interfaces"
 )
 
 install(TARGETS
     cpp_string_pub
     cpp_string_sub
+    student_pub
+    student_sub
     DESTINATION lib/${PROJECT_NAME}
 )
 
