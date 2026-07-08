@@ -26,6 +26,8 @@ setup(
         'console_scripts': [
             'battery_pub = exercise_topic_py.battery_pub:main',
             'battery_sub = exercise_topic_py.battery_sub:main',
+            'sensor_status_pub = exercise_topic_py.sensor_status_pub:main',
+            'sensor_status_sub = exercise_topic_py.sensor_status_sub:main',
         ],
     },
 )
