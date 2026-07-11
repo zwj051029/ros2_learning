@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.8)
-project(base_interfaces)
+project(exercise_service_cpp)
 
 if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra -Wpedantic)
@@ -7,16 +7,30 @@ endif()
 
 # find dependencies
 find_package(ament_cmake REQUIRED)
-# uncomment the following section in order to fill in
-# further dependencies manually.
-# find_package(<dependency> REQUIRED)
-find_package(rosidl_default_generators REQUIRED)
+find_package(rclcpp REQUIRED)
+find_package(std_msgs REQUIRED)
+find_package(base_interfaces REQUIRED)
 
-rosidl_generate_interfaces(${PROJECT_NAME}
-  "msg/Student.msg"
-  "msg/SensorStatus.msg"
-  "srv/AddInts.srv"
-  "srv/SetRobotMode.srv"
+add_executable(robot_mode_server src/robot_mode_server.cpp)
+ament_target_dependencies(
+  robot_mode_server
+  "rclcpp"
+  "std_msgs"
+  "base_interfaces"
+)
+
+add_executable(robot_mode_client src/robot_mode_client.cpp)
+ament_target_dependencies(
+  robot_mode_client
+  "rclcpp"
+  "std_msgs"
+  "base_interfaces"
+)
+
+install(TARGETS 
+  robot_mode_server
+  robot_mode_client
+  DESTINATION lib/${PROJECT_NAME}
 )
 
 if(BUILD_TESTING)

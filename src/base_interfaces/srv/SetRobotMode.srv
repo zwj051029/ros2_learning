@@ -1,0 +1,7 @@
+string mode
+float32 max_speed
+---
+bool success
+string current_mode
+float32 current_max_speed
+string message
