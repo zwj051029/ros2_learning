@@ -24,7 +24,8 @@ setup(
     },
     entry_points={
         'console_scripts': [
-            'sum_server = learning_service_py.sum_server:main'
+            'sum_server = learning_service_py.sum_server:main',
+            'sum_client = learning_service_py.sum_client:main',
         ],
     },
 )

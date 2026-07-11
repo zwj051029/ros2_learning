@@ -1,0 +1,5 @@
+{
+    "python.analysis.extraPaths": [
+        "${workspaceFolder}/install/base_interfaces/lib/python3.10/site-packages"
+    ]
+}
