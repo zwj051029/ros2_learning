@@ -17,6 +17,7 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   "msg/SensorStatus.msg"
   "srv/AddInts.srv"
   "srv/SetRobotMode.srv"
+  "srv/ManageWaypoint.srv"
 )
 
 if(BUILD_TESTING)

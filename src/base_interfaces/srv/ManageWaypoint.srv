@@ -1,0 +1,13 @@
+string operation
+string waypoint_name
+float32 x
+float32 y
+float32 yaw
+---
+bool success
+string message
+int32 total_count
+string[] waypoint_names
+float32[] xs
+float32[] ys
+float32[] yaws

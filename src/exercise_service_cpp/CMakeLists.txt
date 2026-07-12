@@ -8,14 +8,12 @@ endif()
 # find dependencies
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
-find_package(std_msgs REQUIRED)
 find_package(base_interfaces REQUIRED)
 
 add_executable(robot_mode_server src/robot_mode_server.cpp)
 ament_target_dependencies(
   robot_mode_server
   "rclcpp"
-  "std_msgs"
   "base_interfaces"
 )
 
@@ -23,13 +21,28 @@ add_executable(robot_mode_client src/robot_mode_client.cpp)
 ament_target_dependencies(
   robot_mode_client
   "rclcpp"
-  "std_msgs"
+  "base_interfaces"
+)
+
+add_executable(waypoint_manager_server src/waypoint_manager_server.cpp)
+ament_target_dependencies(
+  waypoint_manager_server
+  "rclcpp"
+  "base_interfaces"
+)
+
+add_executable(waypoint_manager_client src/waypoint_manager_client.cpp)
+ament_target_dependencies(
+  waypoint_manager_client
+  "rclcpp"
   "base_interfaces"
 )
 
 install(TARGETS 
   robot_mode_server
   robot_mode_client
+  waypoint_manager_server
+  waypoint_manager_client
   DESTINATION lib/${PROJECT_NAME}
 )
 
