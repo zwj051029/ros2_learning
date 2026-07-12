@@ -26,6 +26,8 @@ setup(
         'console_scripts': [
             'robot_mode_server = exercise_service_py.robot_mode_server:main',
             'robot_mode_client = exercise_service_py.robot_mode_client:main',
+            'waypoint_manager_server = exercise_service_py.waypoint_manager_server:main',
+            'waypoint_manager_client = exercise_service_py.waypoint_manager_client:main',
         ],
     },
 )
