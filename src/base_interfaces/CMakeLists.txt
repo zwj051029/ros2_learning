@@ -18,6 +18,7 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   "srv/AddInts.srv"
   "srv/SetRobotMode.srv"
   "srv/ManageWaypoint.srv"
+  "action/SumToN.action"
 )
 
 if(BUILD_TESTING)
