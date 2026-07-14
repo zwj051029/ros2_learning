@@ -1,5 +1,15 @@
 {
+    "python.defaultInterpreterPath": "/usr/bin/python3",
+    "python.analysis.semanticTokens": true,
+    "python.analysis.indexing": true,
+    "python.analysis.autoImportCompletions": true,
     "python.analysis.extraPaths": [
-        "${workspaceFolder}/install/base_interfaces/lib/python3.10/site-packages"
-    ]
+        "${workspaceFolder}/install/base_interfaces/local/lib/python3.10/dist-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages"
+    ],
+    "editor.semanticHighlighting.enabled": true,
+    "[python]": {
+        "editor.semanticHighlighting.enabled": true
+    }
 }
