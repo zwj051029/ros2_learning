@@ -1,0 +1,14 @@
+float64 target_x
+float64 target_y
+float64 speed
+---
+bool success
+string message
+float64 final_x
+float64 final_y
+float64 traveled_distance
+---
+float64 current_x
+float64 current_y
+float64 remaining_distance
+float32 progress

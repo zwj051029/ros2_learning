@@ -20,6 +20,7 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   "srv/ManageWaypoint.srv"
   "action/SumToN.action"
   "action/RotateRobot.action"
+  "action/MoveToPoint.action"
 )
 
 if(BUILD_TESTING)

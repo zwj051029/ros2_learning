@@ -13,6 +13,8 @@ find_package(base_interfaces REQUIRED)
 
 add_executable(rotate_robot_server src/rotate_robot_server.cpp)
 add_executable(rotate_robot_client src/rotate_robot_client.cpp)
+add_executable(move_to_point_server src/move_to_point_server.cpp)
+add_executable(move_to_point_client src/move_to_point_client.cpp)
 target_include_directories(rotate_robot_server PUBLIC
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
   $<INSTALL_INTERFACE:include>)
@@ -31,9 +33,25 @@ ament_target_dependencies(
   "base_interfaces"
 )
 
+ament_target_dependencies(
+  move_to_point_server
+  "rclcpp"
+  "rclcpp_action"
+  "base_interfaces"
+)
+
+ament_target_dependencies(
+  move_to_point_client
+  "rclcpp"
+  "rclcpp_action"
+  "base_interfaces"
+)
+
 install(TARGETS
   rotate_robot_server
   rotate_robot_client
+  move_to_point_server
+  move_to_point_client
   DESTINATION lib/${PROJECT_NAME}
 )
 
