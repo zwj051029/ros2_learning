@@ -26,6 +26,8 @@ setup(
         'console_scripts': [
             'rotate_robot_server = exercise_action_py.rotate_robot_server:main',
             'rotate_robot_client = exercise_action_py.rotate_robot_client:main',
+            'move_to_point_server = exercise_action_py.move_to_point_server:main',
+            'move_to_point_client = exercise_action_py.move_to_point_client:main',
         ],
     },
 )
