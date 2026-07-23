@@ -28,6 +28,8 @@ setup(
         "console_scripts": [
             "robot_config_server = "
             "exercise_param_py.robot_config_server:main",
+            "navigation_config_server = "
+            "exercise_param_py.navigation_config_server:main",
         ],
     },
 )
