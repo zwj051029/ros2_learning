@@ -8,6 +8,7 @@ endif()
 # find dependencies
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
+find_package(std_msgs REQUIRED)
 
 add_executable(name_remap src/name_remap.cpp)
 target_include_directories(name_remap PUBLIC
@@ -17,6 +18,7 @@ target_compile_features(name_remap PUBLIC c_std_99 cxx_std_17)  # Require C99 an
 ament_target_dependencies(
   name_remap
   "rclcpp"
+  "std_msgs"
 )
 
 install(TARGETS name_remap

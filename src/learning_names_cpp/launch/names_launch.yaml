@@ -1,8 +1,20 @@
 launch:
-- node:
-    pkg: turtlesim
-    exec: turtlesim_node
-    name: turtle3
+# 解决节点重名
+# - node:
+#     pkg: turtlesim
+#     exec: turtlesim_node
+#     name: turtle3
+# - node:
+#     pkg: turtlesim
+#     exec: turtlesim_node
+#     namespace: t3
+# - node:
+#     pkg: turtlesim
+#     exec: turtlesim_node
+#     name: turtle3
+#     namespace: t3
+
+# 解决话题重名
 - node:
     pkg: turtlesim
     exec: turtlesim_node
@@ -10,5 +22,7 @@ launch:
 - node:
     pkg: turtlesim
     exec: turtlesim_node
-    name: turtle3
-    namespace: t3
+    remap:
+    -
+      from: /turtle1/cmd_vel
+      to: /cmd_vel
